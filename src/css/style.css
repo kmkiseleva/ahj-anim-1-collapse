@@ -1,0 +1,65 @@
+body {
+  background-image: url('../img/ph-bg.jpg');
+  background-repeat: no-repeat;
+}
+
+.collapse {
+  width: 40%;
+  margin: 30px auto;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.collapse__button {
+  display: block;
+  background-color: #701328;
+  color: white;
+  width: 200px;
+  box-sizing: border-box;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  padding-top: 10px;
+}
+
+.collapse__button:active {
+  transform: scale(0.9);
+}
+
+.collapse__content {
+  margin-top: 20px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 200px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes collapseDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 200px;
+  }
+}
+
+@keyframes collapseUp {
+  from {
+    height: 200px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+.collapse__text {
+  padding: 20px;
+}
