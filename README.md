@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/96w80kmiqqht9fy3?svg=true)](https://ci.appveyor.com/project/kmkiseleva/ahj-anim-1-collapse)
