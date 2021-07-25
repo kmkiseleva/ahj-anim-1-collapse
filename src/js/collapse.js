@@ -9,22 +9,36 @@ export default class Collapse {
 
   registerEvents() {
     const collapseButton = document.querySelector('.collapse__button');
+    const collapseContent = document.querySelector('.collapse__content');
+    let counter = 1;
 
     collapseButton.addEventListener('click', (event) => {
-      this.onClickCollapse(event);
+      if (counter % 2 !== 0) {
+        collapseContent.style.height = '200px';
+        collapseContent.style.visibility = 'visible';
+        this.onClickCollapseDown(event);
+        counter += 1;
+      } else {
+        this.onClickCollapseUp(event);
+        counter += 1;
+      }
     });
   }
 
-  onClickCollapse(event) {
+  onClickCollapseDown(event) {
     const { currentTarget } = event;
     const collapseContent = currentTarget.nextElementSibling;
 
-    if (collapseContent.classList.contains('hidden')) {
-      collapseContent.classList.remove('hidden');
-      collapseContent.style.animation = 'collapseDown 0.6s linear';
-    } else {
-      collapseContent.classList.add('hidden');
-      collapseContent.style.animation = 'collapseUp 0.5s linear';
-    }
+    collapseContent.style.animation = 'collapseDown 0.6s linear';
+    collapseContent.style.display = 'block';
+  }
+
+  onClickCollapseUp(event) {
+    const { currentTarget } = event;
+    const collapseContent = currentTarget.nextElementSibling;
+
+    collapseContent.style.animation = 'collapseUp 0.5s linear';
+    collapseContent.style.height = '0';
+    collapseContent.style.visibility = 'hidden';
   }
 }
